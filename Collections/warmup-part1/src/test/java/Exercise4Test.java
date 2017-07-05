@@ -58,6 +58,7 @@ public class Exercise4Test {
 
     @Test
     public void testIsEmptyMethodOverIntegerList() {
+        //*TO DO USE ITERATER AND REMOVE THE
 //        for (int i = 0; i < testingIntegerValues.size(); i++) {
 //            testingIntegerValues.remove(i);
 //        }

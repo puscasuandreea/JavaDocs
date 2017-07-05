@@ -1,5 +1,8 @@
 package exercise.exercise4;
 
+import java.util.Iterator;
+import java.util.function.Consumer;
+
 /**
  * You should implement from zero a data structure that acts as an ArrayList.
  * We have a default capacity of {@link MyImplementedList#DEFAULT_CAPACITY} elements of type <code>E</code>.
@@ -21,7 +24,15 @@ package exercise.exercise4;
  * @author Cristian.Dumitru
  * @since 7/3/2017.
  */
-public class MyImplementedList<E> {
+  class MyException extends Exception{
+    MyException(String exceptie){
+        super(exceptie);
+    }
+
+}
+
+
+public class MyImplementedList<E> implements Iterable<E>{
 
     /**
      * The maximum accepted load property of the data structure.
@@ -58,38 +69,130 @@ public class MyImplementedList<E> {
     //TODO a) implement the empty constructor for the your data structure
     public MyImplementedList() {
         //TODO a) HINT - DEFAULT_CAPACITY, capacityAfterExtending and elementData properties
+        this.elementData = new Object[DEFAULT_CAPACITY];
+        this.capacityAfterExtending = DEFAULT_CAPACITY;
+
     }
 
     //TODO b) create the int size() method that returns the size of the data structure
+    public int size() {
+        return size;
+    }
 
     //TODO c) create the boolean add(E e) method that adds at the end of the data structure an element
     //TODO pay attention to the LOAD_FACTOR of the data structure
+    public boolean add(E e) {
+        return true;
+    }
+
 
     //TODO d) create the boolean isEmpty() method that checks if the data structure have elements
+    public boolean isEmpty() {
+        return size == 0;
+    }
 
     //TODO e) create the boolean contains(Object o_O) method that checks if the data structure contains the object o_O
+    public boolean contains(Object o) {
+        for (Object ob : elementData) {
+            if (ob.equals(o)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     //TODO f) create the int indexOf(Object o_O) method that returns the position in the data structure of the object o_O
-    //TODO if exists, otherwise return -1
+    //TODO if exists, otherwise return -1i
+    public int indexOf(Object o) {
+        if (o == null) {
+            for (int i = 0; i < this.size(); i++)
+                if (elementData[i] == null)
+                    return i;
+        } else {
+            for (int i = 0; i < this.size(); i++)
+                if (o.equals(elementData[i]))
+                    return i;
+        }
+        return -1;
+
+    }
 
     //TODO g) create the int lastIndexOf(Object o_O) method that returns the last position in the data structure of the object o_O
     //TODO if exists, otherwise return -1
+    public int lastIndexOf(Object o) {
+        if (o == null) {
+            for (int i = this.size() - 1; i >= 0; i--)
+                if (elementData[i] == null)
+                    return i;
+        } else {
+            for (int i = this.size() - 1; i >= 0; i--)
+                if (o.equals(elementData[i]))
+                    return i;
+        }
+        return -1;
+    }
 
     //TODO h) create the E get(int index) method that returns the object from the given index
     //TODO pay attention to the size property
+    public E get(int index) {
+        if (index < 0 || index >= this.size)
+            throw new IndexOutOfBoundsException("outOfBoundsMsg");
+        return (E) elementData[index];
+    }
+
 
     //TODO i) create the E set(int index, E element) method that updates the value of the element from the given index
     //TODO pay attention to the size property
-
+            public E set(int index,E element ){
+                    if (index >= size)
+                        throw new IndexOutOfBoundsException("outOfBoundsMsg");
+                return (E) elementData[index];
+            }
     //TODO j) create the E remove(int index) method that removes the element from the given index
-
+            public E remove(int index){
+                if (index < 0 || index >= this.size)
+                    throw new IndexOutOfBoundsException("outOfBoundsMsg");
+                return (E) elementData[index];
+            }
     //TODO k) extend the current default capacity, if the number of elements in the data structure is > 75% of it
     //TODO you should name it: void extendCapacity(int capacity) - HINT use capacity, DEFAULT_CAPACITY, LOAD_FACTOR and INCREASE_SIZE_FACTOR
+            public void extendCapacity(int capacity){
+                if(size /capacityAfterExtending >LOAD_FACTOR){
+                    capacityAfterExtending = capacityAfterExtending*INCREASE_SIZE_FACTOR;
+                    Object [] obj1 = new Object[capacityAfterExtending];
+                    for(int i = 0; i< size();i++){
+                        obj1[i] = elementData[i];
+                    }
+                    elementData = obj1;
+                }
+
+                }
+
 
     //TODO l) implement the iterator() method in order to use the foreach statement over your data structure - HINT Iterable interface
-    //TODO and implement a custom iterator for your custom data structure - methods boolean hasNext(), Object next() and void remove()
+    //TODO and implement a custom iterator for your custom data structure - methods boolean hasNext(), Object next() and void remove(){
+
+    public Iterator<E> iterator() {
+       Iterator<E> it = new Iterator<E>() {
+           public boolean hasNext() {
+               return false;
+           }
+
+           public E next() {
+               return null;
+           }
+
+           public void remove() {
+
+           }
+       };
+       return  it;
+    }
+
 
     //TODO m) implement a method, that uses a Comparator, for your data structure to sort the elements
     //TODO you should name it: void sort(Comparator<? super E> c)
     //TODO create a custom comparator that compares objects by their "what you want" :D - HINT Comparator interface
+
 }
