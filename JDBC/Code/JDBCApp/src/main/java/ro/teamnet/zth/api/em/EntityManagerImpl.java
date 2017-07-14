@@ -1,5 +1,6 @@
 package ro.teamnet.zth.api.em;
 
+import com.sun.xml.internal.bind.v2.model.core.ID;
 import ro.teamnet.zth.api.annotations.Id;
 import ro.teamnet.zth.api.database.DBManager;
 
@@ -8,8 +9,10 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Andreea.Puscasu on 7/13/2017.
@@ -93,6 +96,7 @@ public class EntityManagerImpl implements EntityManager {
                 columnInfo.setValue(getNextIdVal(tabelName,columnInfo.getDbColumnName()));
             }else{
 
+
             }
         }
         return null;
@@ -100,6 +104,133 @@ public class EntityManagerImpl implements EntityManager {
 
     @Override
     public <T> List<T> findAll(Class<T> entityClass) {
+        return null;
+    }
+
+    @Override
+    public <T> T update(T entity) throws NoSuchFieldException, IllegalAccessException {
+
+        try (
+            Connection connection = DBManager.getConnection();
+            Statement stm = connection.createStatement();){
+
+            String tabelName = EntityUtils.getTableName((Class) entity);
+            List<ColumnInfo> columns = EntityUtils.getColumns((Class) entity);
+
+            for (ColumnInfo columnInfo : columns){
+                Field filedss = ((Class) entity).getDeclaredField(columnInfo.getColumnName());
+                filedss.setAccessible(true);
+                columnInfo.setValue(filedss.get(entity));
+           }
+                Condition condition = new Condition();
+                condition.setValue(columns.get(0).getValue());
+                condition.setColumnName(columns.get(0).getDbColumnName());
+
+                QueryBuilder queryBuilder = new QueryBuilder();
+                queryBuilder.setTableName(tabelName);
+                queryBuilder.setQueryType(QueryType.UPDATE);
+                queryBuilder.addQueryColumns(columns);
+                queryBuilder.addCondition(condition);
+
+                String comandaSql = queryBuilder.createQuery();
+
+                stm.executeUpdate(comandaSql);
+
+                Long idValue = (Long) columns.get(0).getValue();
+                return (T) findById(entity.getClass(),(Long)idValue);
+
+           } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    @Override
+    public void delete(Object entity) throws NoSuchFieldException, IllegalAccessException {
+
+        try (
+            Connection connection = DBManager.getConnection();
+            Statement stm = connection.createStatement();){
+
+            String tabelName = EntityUtils.getTableName(entity.getClass());
+            List<ColumnInfo> columns = EntityUtils.getColumns(entity.getClass());
+            for(ColumnInfo columnInfo:columns){
+                Field field = entity.getClass().getDeclaredField(columnInfo.getColumnName());
+                field.setAccessible(true);
+                columnInfo.setValue(field.get(entity));
+            }
+
+            Condition condition = new Condition();
+            condition.setColumnName(columns.get(0).getDbColumnName());
+            condition.setValue(columns.get(0).getValue());
+
+            QueryBuilder queryBuilder = new QueryBuilder();
+            queryBuilder.setTableName(tabelName);
+            queryBuilder.setQueryType(QueryType.DELETE);
+            queryBuilder.addCondition(condition);
+            String sql = queryBuilder.createQuery();
+            stm.executeUpdate(sql);
+
+
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+    }
+
+    @Override
+    public <T>List<T> findByParams(Class<T> entityClass, Map<String, Object> params) throws NoSuchFieldException, IllegalAccessException, InstantiationException {
+
+        try (
+        Connection connection = DBManager.getConnection();
+        Statement stm = connection.createStatement(); )  {
+
+            String tabelName = EntityUtils.getTableName(entityClass);
+            List<ColumnInfo> columns = EntityUtils.getColumns(entityClass);
+
+            for(ColumnInfo columnInfo :columns){
+                Field field = entityClass.getDeclaredField(columnInfo.getColumnName());
+                field.setAccessible(true);
+
+                columnInfo.setValue(field.get(entityClass));
+            }
+
+            Condition condition = new Condition();
+            condition.setColumnName(columns.get(0).getDbColumnName());
+            condition.setValue(columns.get(0).getValue());
+
+            QueryBuilder queryBuilder = new QueryBuilder();
+            queryBuilder.setTableName(entityClass);
+            queryBuilder.setQueryType(QueryType.SELECT);
+            queryBuilder.addCondition(condition);
+
+            String sql = queryBuilder.createQuery();
+            ResultSet resultSet = stm.executeQuery(sql);
+            List<T> ist = new ArrayList<T>();
+            while (resultSet.next()){
+                T instance = entityClass.newInstance();
+                for(ColumnInfo columnInfo : columns){
+                    Field field = instance.getClass().getDeclaredField(columnInfo.getColumnName());
+                    field.setAccessible(true);
+                    field.set(instance,EntityUtils.castFromSqlType(columnInfo.getValue(),columnInfo.getColumnType()));
+                    ist.add(instance);
+                }
+
+               return ist;
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
         return null;
     }
 }
