@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8190de14-8007-4246-acf3-a7dd4a592656" name="Default" comment="JDBC DAY 2">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Servlets/Day2/Docs/Workshop 1 - JSP - 1.0.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Servlets/Day2/Docs/Workshop 2 - RequestDispatcherWorkshop.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Servlets/Day2/Docs/Workshop 3 - ServletFilters.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Servlets/Day2/Docs/Workshop 4 - HttpSession.docx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Docs/Web Presentation-Part1.pptx" afterPath="$PROJECT_DIR$/Servlets/Day1/Docs/Web Presentation-Part1.pptx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Docs/Workshop 1 - Server configuration.docx" afterPath="$PROJECT_DIR$/Servlets/Day1/Docs/Workshop 1 - Server configuration.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Docs/Workshop 2 - Web application.docx" afterPath="$PROJECT_DIR$/Servlets/Day1/Docs/Workshop 2 - Web application.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Docs/Workshop 3 - Servlets.docx" afterPath="$PROJECT_DIR$/Servlets/Day1/Docs/Workshop 3 - Servlets.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day2/Docs/Web Presentation-Part2.pptx" afterPath="$PROJECT_DIR$/Servlets/Day2/Docs/Web Presentation-Part2.pptx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/target/servlet-app.war" afterPath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/target/servlet-app.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/src/main/java/ro/teamnet/zth/web/ZeroToHeroServlet.java" afterPath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/src/main/java/ro/teamnet/zth/web/ZeroToHeroServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/src/main/webapp/zero-to-hero.html" afterPath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/src/main/webapp/zero-to-hero.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/target/servlet-app/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/target/servlet-app/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/target/servlet-app/index.html" afterPath="$PROJECT_DIR$/Servlets/Day1/Code/servlet-app/target/servlet-app/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,7 +39,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1370" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectView">
@@ -77,6 +79,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Servlets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaDocs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaDocs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Reflection" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -97,9 +113,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -527,6 +543,8 @@
       <workItem from="1500012403853" duration="138000" />
       <workItem from="1500043086718" duration="318000" />
       <workItem from="1500361280778" duration="605000" />
+      <workItem from="1500475625867" duration="202000" />
+      <workItem from="1500530717794" duration="18000" />
     </task>
     <task id="LOCAL-00001" summary="Reflaction">
       <created>1499871828978</created>
@@ -542,14 +560,21 @@
       <option name="project" value="LOCAL" />
       <updated>1499957801105</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="servlet 2">
+      <created>1500475712810</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1500475712810</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1543000" />
+    <option name="totallyTimeSpent" value="1763000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -565,7 +590,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2685325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27633587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -590,7 +615,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reflaction" />
     <MESSAGE value="JDBC DAY 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="JDBC DAY 1" />
+    <MESSAGE value="servlet 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="servlet 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
